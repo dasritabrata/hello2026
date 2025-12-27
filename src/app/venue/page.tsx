@@ -18,7 +18,7 @@ const center = {
 
 export default function Venue() {
     return (
-        <div className="min-h-screen w-full">
+        <div className="ocean-bg min-h-screen w-full">
             <div className="flex flex-col font-extrabold text-4xl lg:text-5xl items-center pt-24 pb-2">
                 VENUE
             </div>
