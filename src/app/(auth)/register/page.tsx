@@ -15,8 +15,6 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-//@ts-expect-error: Ignoring type error due to use of a third-party library without types
-import validator from "validator";
 import { useRouter } from "next/navigation";
 type RegisterData = {
 	name: string;
@@ -37,10 +35,10 @@ export default function Register() {
 	const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
 	const {
-		register,
+		// register,
 		handleSubmit,
 		control,
-		watch,
+		// watch,
 		formState: { errors, isValid },
 	} = useForm<RegisterData>({
 		mode: "onChange",
