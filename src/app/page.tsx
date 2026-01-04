@@ -61,30 +61,64 @@
 // 	);
 // }
 
+"use client";
+
+import dynamic from "next/dynamic";
+
 import AboutSection from "@/components/AboutSection";
 import HeroSection from "@/components/HeroSection";
 import SpeakerSection from "@/components/SpeakerSection";
 import Timeline from "@/components/TimelineSection";
 import Venue from "@/components/VenueSection";
 
+// IMPORTANT: disable SSR for three.js
+const FluidGlass = dynamic(
+  () => import("@/components/FluidGlass"),
+  { ssr: false }
+);
+
 export default function Home() {
-    return (
-        <div>
-        <div id="home">
-            <HeroSection />
-        </div>
-        <div id="about">
-            <AboutSection />
-        </div>
-        <div id="timeline">
-            <Timeline />
-        </div>
-        <div id="speakers">
-            <SpeakerSection />
-        </div>
-        <div id="venue">
-            <Venue />
-        </div>
-        </div>
-    );
+  return (
+    <div>
+      <div id="home">
+        <HeroSection />
+      </div>
+
+      {/* Floating Glass Cube */}
+      <div style={{ height: "500px", position: "relative" }}>
+        <FluidGlass mode="cube" />
+      </div>
+
+      <div id="about">
+        <AboutSection />
+      </div>
+
+      {/* Floating Glass Cube */}
+      <div style={{ height: "500px", position: "relative" }}>
+        <FluidGlass mode="cube" />
+      </div>
+
+      <div id="timeline">
+        <Timeline />
+      </div>
+
+      {/* Floating Glass Cube */}
+      <div style={{ height: "500px", position: "relative" }}>
+        <FluidGlass mode="cube" />
+      </div>
+
+      <div id="speakers">
+        <SpeakerSection />
+      </div>
+
+      {/* Floating Glass Cube */}
+      <div style={{ height: "500px", position: "relative" }}>
+        <FluidGlass mode="cube" />
+      </div>
+
+      <div id="venue">
+        <Venue />
+      </div>
+    </div>
+  );
 }
